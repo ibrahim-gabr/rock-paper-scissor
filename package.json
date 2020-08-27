@@ -1,0 +1,39 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
+    "build:tailwind": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/index.css",
+    "build": "yarn run build:tailwind && rollup -c",
+    "start": "sirv public -s",
+    "serve": "serve public -p 80",
+    "dev": "concurrently \"rollup -c -w\" \"yarn run watch:tailwind\""
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.19.2",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "postcss-cli": "^7.1.1",
+    "prettier": "^2.0.5",
+    "prettier-plugin-svelte": "^1.1.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "tailwindcss": "^1.7.2"
+  },
+  "dependencies": {
+    "@tailwindcss/ui": "^0.5.0",
+    "firebase": "^7.17.1",
+    "rxfire": "^3.13.5",
+    "rxjs": "^6.6.2",
+    "sirv-cli": "^1.0.0",
+    "svelte-calendar": "^1.5.0",
+    "svelte-loadable": "^1.5.0",
+    "svelte-routing": "^1.4.2"
+  }
+}
